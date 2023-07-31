@@ -1,0 +1,15 @@
+$primary: #ecbe43;
+$tertiary: #e5e2df;
+$white: $tertiary;
+
+.bg-white {
+    background: $white;
+}
+
+.bg-dark {
+    background: #252525 !important;
+}
+
+.text-white {
+    color: $white !important;
+}
