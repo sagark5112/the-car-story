@@ -12,6 +12,10 @@ import {
 } from "react-router-dom";
 import Login from './components/Login';
 import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import ServiceHistory from './components/ServiceHistory';
+import Feedbacks from './components/Feedbacks';
+import AddServiceHistory from './components/AddServiceHistory';
 
 const appRouter = createBrowserRouter([
   {
@@ -20,7 +24,25 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "/Home",
-    element: <Home />
+    element: <Home />,
+    children: [
+      {
+        path: "/Home",
+        element: <Dashboard />
+      },
+      {
+        path: "/Home/Service-history",
+        element: <ServiceHistory />
+      },
+      {
+        path: "/Home/Feedbacks",
+        element: <Feedbacks />
+      },
+      {
+        path: "/Home/AddNewServiceHistory",
+        element: <AddServiceHistory />
+      }
+    ]
   },
 ]);
 

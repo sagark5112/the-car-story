@@ -14,27 +14,26 @@ const Login = () => {
 
     const encodedPass = window.btoa(password);
 
-    let userFound = false;
+    let userFound = [];
     users.map((user) => {
         if(user.username == username) {
-            userFound = true;
+            userFound.push(user);
             if(user.encodedPass() == encodedPass) {
                 navigate("/Home");
+            } else {
+              alert("Invalid Password")
             }
-        } else {
-           userFound = false;
         }
     })
-    if(!userFound) {
+    if(userFound.length < 1) {
         alert("Invalid User Credentials")
     }
-    setUsername("");
-    setPassword("");
+    setUsername(""); setPassword("");
   }
 
   return (
     <>
-      <div className="container-fluid bg-light h-100">
+      <div className="container-fluid bg-light h-100vh">
         <div className="row h-100">
           <div className="container">
             <div className="row h-100 d-flex align-items-center">
@@ -44,7 +43,7 @@ const Login = () => {
                     <img
                       className="my-4"
                       src={Logo}
-                      width={"100%"}
+                      width={"70%"}
                       alt="The Car Story Logo"
                     />
                     <h1 className="h3 text-white mb-3 nunito-regular">
@@ -75,7 +74,7 @@ const Login = () => {
                       <label htmlFor="password">Password</label>
                     </div>
                     <button
-                      className="w-100 btn btn-lg btn-primary adrianna-bold text-uppercase"
+                      className="w-100 btn btn-lg btn-primary"
                       type="submit"
                       onClick={(event) => validateUser(event)}
                     >

@@ -1,0 +1,31 @@
+.counter-section {
+    .card.widget-flat {
+        border-radius: 8px;
+        margin-bottom: ($spacer);
+        border: none;
+        box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+        .card-body {
+            padding: 12px;
+        }
+        .card-title {
+            font-size: 1rem;
+        }
+        .card-subtitle {
+            font-family: "Adrianna-Bold";
+        }
+    }
+}
+
+.timeline-section {
+    > .card {
+        box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+        border: none;
+        border-radius: 8px;
+        .card-header {
+            background: none;
+            .header-title {
+                margin: 7.5px 0;
+            }
+        }
+    }
+}

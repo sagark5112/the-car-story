@@ -1,7 +1,14 @@
+import { Outlet } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import Header from "./Header";
+
 const Home = () => {
-    return (
-        <>This is home page</>
-    )
-}
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
+};
 
 export default Home;
